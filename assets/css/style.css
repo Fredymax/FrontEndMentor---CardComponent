@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+  --width-mobile: 375px;
+  --width-desktop: 1440px;
+
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --very-dark-blue-main: hsl(217, 54%, 11%);
+  --very-dark-blue-card: hsl(216, 50%, 16%);
+  --very-dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+
+  --font-size: 18px;
+  --font-family:'Outfit', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background-color: var(--very-dark-blue-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  block-size: 100vh   ;
+  inline-size: 100%;
+  padding-inline: 24px;
+}
+
+.card {
+  inline-size: 330px;
+  block-size: auto;
+  border-radius: 15px;
+  padding: 24px;
+  background-color: var(--very-dark-blue-card);
+  color: var(--soft-blue);
+  box-shadow: 10px 24px 10px 10px rgb(0 0 0 / 15%), -10px 24px 10px 10px rgb(0 0 0 / 15%);
+}
+
+.card-description {
+  font-weight: 300;
+  padding-block-start: 15px;
+  padding-block-end: 15px;
+}
+
+.card-image {
+  overflow: hidden;
+  cursor: pointer;
+}
+.card-image img,
+.background-cover img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.background-cover img {
+  block-size: 25px;
+  inline-size: 25px;
+}
+
+.background-cover {
+  border-radius: 50%;
+  transform: translate(0,100%) scale(0);
+  transition: transform .200s linear;
+}
+
+.card-image:hover .background-cover {
+  transform: translate(0,0) scale(2);
+}
+.card-image figure {
+  margin: 0;
+  position: relative;
+  block-size: 100%;
+}
+
+.background-cover {
+  background-color: hsl(178deg 100% 50% / 50%);
+  position: absolute;
+  top: 0;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.creator-name,
+.card-title {
+  color: var(--white);
+  text-decoration: none;
+  transition: color .2s linear;
+}
+
+.card-title {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.description-information {
+  display: flex;
+}
+
+.information-left,
+.information-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  
+}
+
+.information-left span {
+  color: var(--cyan);
+  font-weight: 600;
+}
+.information-right {
+  justify-content: flex-end;
+}
+
+.line-separate {
+  border-color: transparent;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  background-color: var(--soft-blue);
+  margin-block-start: 15px;
+  margin-block-end: 15px;
+  block-size: 1px;
+}
+
+.card-avatar {
+  inline-size: 33px;
+  block-size: 33px;
+  border-radius: 50%;
+}
+
+.card-avatar img {
+  inline-size: 100%;
+}
+
+.card-created-by {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.creator-name:hover,
+.card-title:hover {
+  color: var(--cyan);
+}
